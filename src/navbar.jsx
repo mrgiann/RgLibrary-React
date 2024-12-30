@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import '../src/navbar.css';
 
 const themes = {
@@ -32,7 +33,9 @@ const Navbar = () => {
       updateThemeStyles(savedTheme);
     }
   }, []);
-  
+
+  const location = useLocation(); // Hook para obtener la ruta actual
+  const isHome = location.pathname === "/"; // Verifica si estamos en la página de inicio
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -67,14 +70,13 @@ const Navbar = () => {
     document.documentElement.style.setProperty('--color-fondo-card-links', colors[5]);
 
     if (colors) {
-
       // Aplicar brillo según el tema
       if (theme === 'sun') {
-          document.documentElement.style.setProperty('--theme-input-filter', 'brightness(0.1)');
+        document.documentElement.style.setProperty('--theme-input-filter', 'brightness(0.1)');
       } else {
-          document.documentElement.style.setProperty('--theme-input-filter', 'none');
+        document.documentElement.style.setProperty('--theme-input-filter', 'none');
       }
-  }
+    }
   };
 
   return (
@@ -86,26 +88,26 @@ const Navbar = () => {
       <div className="line"></div>
       <nav className="navbar">
         <div className="container">
-          <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-            <a href="#">
-              <button onClick={closeMenus}>Inicio</button>
-            </a>
-            <a href="#juegos">
-              <button onClick={closeMenus}>Juegos</button>
-            </a>
-            <a href="#paginas">
-              <button onClick={closeMenus}>Paginas</button>
-            </a>
-            <a href="#roms">
-              <button onClick={closeMenus}>ROMS</button>
-            </a>
-            <a href="#programas">
-              <button onClick={closeMenus}>Programas</button>
-            </a>
-          </div>
+        <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
+      <a href={location.pathname === '/' ? "#" : "/"}>
+        <button onClick={closeMenus}>Inicio</button>
+      </a>
+      <a href={location.pathname === '/gallery' ? "#" : "/gallery"}>
+        <button onClick={closeMenus}>Juegos</button>
+      </a>
+      <a href={location.pathname === '/paginas' ? "#" : "/paginas"}>
+        <button onClick={closeMenus}>Páginas</button>
+      </a>
+      <a href={location.pathname === '/roms' ? "#" : "/roms"}>
+        <button onClick={closeMenus}>ROMS</button>
+      </a>
+      <a href={location.pathname === '/programas' ? "#" : "/programas"}>
+        <button onClick={closeMenus}>Programas</button>
+      </a>
+    </div>
 
           <button className="menu-toggle" aria-label="Abrir menú" onClick={toggleMenu}>
-            <i className={`fas fa-bars ${isMenuOpen ? 'open' : ''}`}><img id='hamburger' src='/hamburger.svg'></img></i>
+            <i className={`fas fa-bars ${isMenuOpen ? 'open' : ''}`}><img id='hamburger' src='/hamburger.svg' alt="hamburger" /></i>
           </button>
 
           <div className="navbar-actions">
@@ -125,7 +127,7 @@ const Navbar = () => {
                 </div>
                 <div className="theme-option" onClick={() => changeTheme('sun')}>
                   <img src="../sun.webp" alt="Sun" />
-                  Dia
+                  Día
                   <ColorCircles theme="sun" />
                 </div>
               </div>

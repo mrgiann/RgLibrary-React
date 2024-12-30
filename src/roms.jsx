@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function roms() {
-  // Constante con títulos de juegos por categoría
+export default function Roms() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   const games = {
     "ROMS de NES": [
       { title: "Super Mario", url: "https://downloads.gamulator.com/roms/Super%20Mario%20Bros.%20(Japan,%20USA).zip" },
@@ -30,16 +35,32 @@ export default function roms() {
       { title: "Bios PS2", url: "https://www.retrostic.com/es/bios/pcsx2-playstation-2/download" },
     ],
   };
-  
+
+  const filteredGames = Object.keys(games).reduce((acc, category) => {
+    const filteredCategoryGames = games[category].filter((game) =>
+      game.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (filteredCategoryGames.length > 0) {
+      acc[category] = filteredCategoryGames;
+    }
+    return acc;
+  }, {});
 
   return (
-    <div id="roms" className="p-6 bg-fondo min-h-screen flex justify-center items-center">
+    <div id="roms" className="mt-24 p-6 bg-fondo min-h-screen flex flex-col items-center">
+      <input
+        type="text"
+        placeholder="Buscar ROMs..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-input mb-6"
+      />
       <div className="w-full max-w-[1580px]">
-        {Object.keys(games).map((category, index) => (
+        {Object.keys(filteredGames).map((category, index) => (
           <div key={index} className="mb-12">
             <h2 className="text-3xl font-semibold text-texto mb-4 flex justify-center">{category}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {games[category].map((game, index) => (
+              {filteredGames[category].map((game, index) => (
                 <a
                   key={index}
                   href={game.url} // Enlace para abrir al hacer clic
@@ -59,4 +80,4 @@ export default function roms() {
       </div>
     </div>
   );
-}  
+}

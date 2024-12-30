@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function programas() {
-  // Constante con títulos, descripciones y enlaces
+export default function Programas() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   const links = {
     "Programas": [
       {
@@ -51,16 +56,33 @@ export default function programas() {
       }
     ]
   };
-  
+
+  const filteredLinks = Object.keys(links).reduce((acc, category) => {
+    const filteredCategoryLinks = links[category].filter((link) =>
+      link.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      link.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (filteredCategoryLinks.length > 0) {
+      acc[category] = filteredCategoryLinks;
+    }
+    return acc;
+  }, {});
 
   return (
-    <div id="programas" className="p-6 bg-fondo min-h-screen flex justify-center items-center">
+    <div id="programas" className="mt-24 p-6 bg-fondo min-h-screen flex flex-col items-center">
+      <input
+        type="text"
+        placeholder="Buscar programas..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-input mb-6"
+      />
       <div className="w-full max-w-[1580px]">
-        {Object.keys(links).map((category, index) => (
+        {Object.keys(filteredLinks).map((category, index) => (
           <div key={index} className="mb-12">
             <h2 className="text-3xl font-semibold text-texto mb-4 flex justify-center">{category}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {links[category].map((link, index) => (
+              {filteredLinks[category].map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
@@ -81,4 +103,4 @@ export default function programas() {
       </div>
     </div>
   );
-}  
+}

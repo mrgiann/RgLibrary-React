@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
@@ -10,19 +11,27 @@ export default function App() {
       </header>
       
       <div className="flex space-x-6 mt-8">
-        <div className="flex items-center justify-center w-16 h-16">
+      <div className="flex items-center justify-center w-16 h-16">
+        <Link to="/paginas">
           <img id='icon-inicio' src="page.svg" alt="Icono 1" className="w-10 h-10" />
-        </div>
-        <div className="flex items-center justify-center w-16 h-16">
-          <img id='icon-inicio' src="games.svg" alt="Icono 2" className="w-10 h-10" />
-        </div>
-        <div className="flex items-center justify-center w-16 h-16">
-          <img id='icon-inicio' src="program.svg" alt="Icono 3" className="w-10 h-10" />
-        </div>
-        <div className="flex items-center justify-center w-16 h-16">
-          <img id='icon-inicio' src="roms.svg" alt="Icono 4" className="w-10 h-10" />
-        </div>
+        </Link>
       </div>
+      <div className="flex items-center justify-center w-16 h-16">
+        <Link to="/gallery">
+          <img id='icon-inicio' src="games.svg" alt="Icono 2" className="w-10 h-10" />
+        </Link>
+      </div>
+      <div className="flex items-center justify-center w-16 h-16">
+        <Link to="/programas">
+          <img id='icon-inicio' src="program.svg" alt="Icono 3" className="w-10 h-10" />
+        </Link>
+      </div>
+      <div className="flex items-center justify-center w-16 h-16">
+        <Link to="/roms">
+          <img id='icon-inicio' src="roms.svg" alt="Icono 4" className="w-10 h-10" />
+        </Link>
+      </div>
+    </div>
     </div>
   )
 }
