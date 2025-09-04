@@ -81,6 +81,7 @@ export default function Gallery() {
     { id: "crashbandicoot", title: "Crash Bandicoot", imageUrl: "/games/crashbandicoot.webp" },
     { id: "terrordrome", title: "Terrordrome", imageUrl: "/games/terrordrome.webp" },
     { id: "plantsvszombies", title: "Plants vs Zombies", imageUrl: "/games/plantasvszombies.webp" },
+    { id: "plantsvszombiesfusion", title: "Plants vs Zombies Fusion", imageUrl: "/games/plantasvszombiesfusion.webp" },
     { id: "polybridge1", title: "Poly Bridge 1", imageUrl: "/games/polybridge.webp" },
     { id: "polybridge2", title: "Poly Bridge 2", imageUrl: "/games/polybridge2.webp" },
     { id: "gettingoverit", title: "Getting Over It", imageUrl: "/games/getting.webp" },

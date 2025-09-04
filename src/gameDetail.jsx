@@ -895,6 +895,22 @@ const gameData = {
       { url: "https://www.mediafire.com/file/8ljigazy4kixrcx/Pla5ntsvsZo7mbiesGOTY-elamigos.rar/file", label: "Plants vs. Zombies - Mediafire" }
     ],
   },
+  plantsvszombiesfusion: {
+    title: "Plants vs. Zombies Fusion",
+    description: "PVZ Fusion, también conocido como PVZ Hybrid, es una divertida modificación del clásico Plants vs Zombies que te permite fusionar tus plantas favoritas para crear versiones mucho más poderosas.",
+    requisitos: {
+      SO: "Windows XP / Vista / 7",
+      Procesador: "1.2 GHz",
+      Memoria: "1 GB de RAM",
+      Gráficos: "128 MB de memoria gráfica, color de 16 bits o 32 bits",
+      DirectX: "8 o superior",
+      Almacenamiento: "Más de 65 MB de espacio libre"
+    },
+    images: ["/gameplay/Plantas vs Zombiesfusion1.jpg", "/gameplay/Plantas vs Zombiesfusion2.jpg", "/gameplay/Plantas vs Zombiesfusion3.jpg"],
+    downloadLinks: [
+      { url: "https://mega.nz/file/2IBh1CrB#7509It6ZybKe7umkM0Nnje1vsxo48AVPvawqnybSYHA", label: "Plants vs. Zombies Fusion - Mega" }
+    ],
+  },
   polybridge1: {
     title: "Poly Bridge 1",
     description: "Poly Bridge es un juego de lógica y simulación de construcción de puentes, desarrollado por el estudio independiente, con sede en Nueva Zelanda, Dry Cactus con música del compositor canadiense Adrian Talens, donde los jugadores construyen puentes para que vehículos los crucen.",
