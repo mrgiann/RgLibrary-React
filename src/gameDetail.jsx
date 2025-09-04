@@ -376,7 +376,7 @@ const gameData = {
     },
     images: ["/gameplay/Counter-Strike 1.6 img1.jpg", "/gameplay/Counter-Strike 1.6 img2.jpg", "/gameplay/Counter-Strike 1.6 img3.jpg"],
     downloadLinks: [
-      { url: "https://mega.nz/file/BcsliSoY#l0-UdR30s0CuW78OJxbDozyvuZcc7uR89N4bV0cXwLs", label: "Counter Strike - Mega" }
+      { url: "https://down-cs.su/download.php?id=asiimov&type=1", label: "Counter Strike - Asiimov" }
     ],
   },
   halflife: {
@@ -1034,6 +1034,22 @@ const gameData = {
     images: ["/gameplay/teardownimg1.jpg", "/gameplay/teardownimg2.jpg", "/gameplay/teardownimg3.jpg"],
     downloadLinks: [
       { url: "https://www.mediafire.com/file/01tnh8mobcrau09/Teardown.rar/file", label: "Teardown - Mediafire" }
+    ],
+  },
+  hollowknightsilksong: {
+    title: "Hollow Knight: Silksong",
+    description: "Hollow Knight: Silksong es un videojuego metroidvania desarrollado por el estudio independiente australiano Team Cherry. Es la secuela del videojuego de 2017 Hollow Knight.",
+    requisitos: {
+      SO: "Windows 10 versión 21H1 (o posterior), 64 bits.",
+      Procesador: "Intel Core i3-3240 / AMD FX-4300.",
+      Memoria: "4 GB de RAM",
+      Gráficos: "NVIDIA GeForce GTX 560 Ti (1GB) / AMD Radeon HD 7750 (1GB).",
+      DirectX: "Versión 10.",
+      Almacenamiento: "8 GB de espacio disponible."
+    },
+    images: ["/gameplay/hollowknight1.jpg", "/gameplay/hollowknight2.jpg", "/gameplay/hollowknight3.jpg"],
+    downloadLinks: [
+      { url: "https://www.mediafire.com/file/6z3u4b56im9u079", label: "Hollow Knight: Silksong - Mediafire" }
     ],
   },
 };

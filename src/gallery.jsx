@@ -90,6 +90,7 @@ export default function Gallery() {
     { id: "peopleplayground", title: "People Playground", imageUrl: "/games/peopleplayground.webp" },
     { id: "ultimatechickenhorse", title: "Ultimate Chicken Horse", imageUrl: "/games/ultimatechickenhorse.webp" },
     { id: "teardown", title: "Teardown", imageUrl: "/games/teardown.webp" },
+    { id: "hollowknightsilksong", title: "Hollow Knight: Silksong", imageUrl: "/games/hollowknightsilksong.webp" },
   ];
 
   const filteredCards = cards.filter((card) =>
