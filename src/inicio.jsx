@@ -5,9 +5,9 @@ export default function App() {
   return (
     <div className="h-screen bg-fondo text-texto flex flex-col items-center justify-center relative">
       <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Bienvenido a Rg Library</h1>
-        <p className="text-lg">Un sitio web con juegos gratis, páginas entretenidas, programas y roms.</p>
-        <p className="text-lg mb-6">Sin anuncios molestos, ni virus. Con enlaces directos y sin complicaciones!</p>
+        <h1 className="font-inconsolata text-4xl font-bold mb-4">Bienvenido a Rg Library</h1>
+        <p className="font-inconsolata text-lg">Un sitio web con juegos gratis, páginas entretenidas, programas y roms.</p>
+        <p className="font-inconsolata text-lg mb-6">Sin anuncios molestos, ni virus. Con enlaces directos y sin complicaciones!</p>
       </header>
       
       <div className="flex space-x-6 mt-8">

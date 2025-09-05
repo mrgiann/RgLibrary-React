@@ -14,6 +14,9 @@ export default {
         'fondo-card-links': 'var(--color-fondo-card-links)',
         'fondo-menu': 'var(--color-fondo-menu)',
       },
+      fontFamily: {
+        inconsolata: ['Inconsolata', 'monospace'], 
+      },
     },
   },
   plugins: [],

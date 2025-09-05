@@ -53,6 +53,11 @@ export default function Programas() {
         title: "Raze cortex",
         url: "https://www.razer.com/cortex",
         description: "Optimizar juegos",
+      },
+      {
+        title: "RetroArch",
+        url: "https://www.retroarch.com/index.php?page=platforms",
+        description: "Emulador de juegos",
       }
     ]
   };

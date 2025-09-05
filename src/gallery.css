@@ -35,7 +35,7 @@
     padding: 20px;
     text-align: center;
     color: var(--color-texto); /* Valor por defecto si var() no está definido */
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    font-family: 'Inconsolata', monospace;
 }
 
 .card-content h3 {
